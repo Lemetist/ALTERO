@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Веб-платформа объявлений</title>
+    <link rel="stylesheet" href="/static/Products_styles.css">
+</head>
+<body>
+    <header>
+        <h1>Веб-платформа объявлений</h1>
+    </header>
+    <div class="container">
+        <form action="submit_ad.php" method="POST">
+            <div class="form-group">
+                <label for="title">Заголовок объявления:</label>
+                <input type="text" id="title" name="title" required>
+            </div>
+            <div class="form-group">
+                <label for="description">Описание товара:</label>
+                <textarea id="description" name="description" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="contact">Контактная информация:</label>
+                <input type="text" id="contact" name="contact" required>
+            </div>
+            <input type="submit" value="Опубликовать объявление">
+        </form>
+    </div>
+</body>
+</html>
