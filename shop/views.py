@@ -1,13 +1,10 @@
 from django.shortcuts import render
 
 def index(request):
-    context = {
-        'title' : 'test title',
-        'username' : 'test username',
-    }
-
-    return render(request, 'index.html', context)
-
+    return render(request, 'index.html', )
 
 def products(request):
+    return render(request, 'advertisement.html')
+
+def products_create(request):
     return  render(request, 'products.html')
