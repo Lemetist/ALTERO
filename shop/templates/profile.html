@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профиль</title>
+    <link rel="stylesheet" href="{% static 'global.css' %}">
+    <link rel="stylesheet" href="{% static 'profile.css' %}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'home' %}">Главная</a></li>
+                    <li><a href="{% url 'contacts' %}">Контакты</a></li>
+                    <li><a href="{% url 'profile' %}" class="active">Профиль</a></li>
+                    <li><a href="{% url 'products' %}">Объявления</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <h1>Ваш профиль</h1>
+            <div class="profile-info">
+                <img src="{% static 'profile_pic.jpg' %}" alt="Ваше фото профиля">
+                <div class="user-details">
+                    <h2>Имя пользователя</h2>
+                    <p>Email: example@example.com</p>
+                    <p>Телефон: +7 (123) 456-7890</p>
+                    <p>Адрес: ул. Примерная, д. 123, г. Примерный</p>
+                    <button>Редактировать профиль</button>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <p>&copy; 2024 Название вашей компании. Все права защищены.</p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -8,3 +8,14 @@ def products(request):
 
 def products_create(request):
     return  render(request, 'products.html')
+
+def profile(request):
+    return render(request, 'profile.html')
+
+
+def contacts(request):
+    return render(request, 'contacts.html')
+
+
+def home(request):
+    return index(request)

@@ -19,11 +19,11 @@
                     <img class="image-1-icon" alt="" src="{% static 'public/image-1@2x.png' %}">
                     <div class="div1">
                         <div class="div2">
-                            <p class="p">Главная</p>
+                            <p class="p"><a href="{% url 'home' %}">Главная</a></p>
                         </div>
-                        <div class="div3">Контакты</div>
-                        <div class="div4">Профиль</div>
-                        <div class="div5">Объявления</div>
+                        <div class="div3"><a href="{% url 'contacts' %}">Контакты</a></div>
+                        <div class="div4"><a href="{% url 'profile' %}">Профиль</a></div>
+                        <div class="div5"><a href="{% url 'products' %}">Объявления</a></div>
                     </div>
                 </div>
                 <div class="altero">Altero</div>
@@ -59,7 +59,7 @@
                     </ul>
                 </div>
                 <div class="frame4">
-                    <div class="div9">Перейти к объявлениям</div>
+                    <div class="div9"><a href="{% url 'products' %}">Перейти к объявлениям</a></div>
                 </div>
                 <img class="group-icon1" alt="" src="{% static 'public/group.svg' %}">
                 <img class="vector-icon1" alt="" src="{% static 'public/vector.svg' %}">
