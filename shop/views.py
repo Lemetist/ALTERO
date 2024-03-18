@@ -1,10 +1,19 @@
 from django.shortcuts import render
 
+from shop.models import Product
+
+
 def index(request):
     return render(request, 'index.html', )
 
 def products(request):
-    return render(request, 'advertisement.html')
+    context = {
+        'title': Product.objects.all(),
+        'products': Product.objects.all(),
+        'prices': Product.objects.all(),
+        'discription': Product.objects.all(),
+    }
+    return render(request, 'advertisement.html',context)
 
 def products_create(request):
     return  render(request, 'products.html')

@@ -1,0 +1,36 @@
+
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f8f9fa;
+    }
+    .container {
+        width: 80%;
+        margin: auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .advertisement {
+        margin-bottom: 30px;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        overflow: hidden;
+    }
+    .advertisement img {
+        width: 200px;
+        height: auto;
+        float: left;
+        margin-right: 20px;
+        border-radius: 5px;
+    }
+    .advertisement h2 {
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+    .advertisement p {
+        margin-bottom: 5px;
+    }
