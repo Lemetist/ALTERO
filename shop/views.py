@@ -8,10 +8,7 @@ def index(request):
 
 def products(request):
     context = {
-        'title': Product.objects.all(),
         'products': Product.objects.all(),
-        'prices': Product.objects.all(),
-        'discription': Product.objects.all(),
     }
     return render(request, 'advertisement.html',context)
 

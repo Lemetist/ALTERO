@@ -8,18 +8,30 @@
     <link rel="stylesheet" href="{% static 'adv.css' %}">
 </head>
 <body>
-    <div class="container">
-        <h1>Объявления</h1>
-        {% for product in products %}
-        <div class="advertisement">
-            <img src="{{ product.image.url }}" alt="{{ product.name }}">
-            <div>
-                <h2>{{ product.name }}</h2>
-                <p>Цена: ${{ product.price }}</p>
-                <p>Описание: {{ product.description }}</p>
+<div class="container">
+    <div class="div">
+        <img class="image-1-icon" alt="" src="{% static 'public/image-1@2x.png' %}">
+        <div class="buttons-container">
+            <div class="div2">
+                <p class="p"><a href="{% url 'home' %}" class="button-link">Главная</a></p>
             </div>
+            <div class="div3"><a href="{% url 'contacts' %}" class="button-link">Контакты</a></div>
+            <div class="div4"><a href="{% url 'profile' %}" class="button-link">Профиль</a></div>
+            <div class="div5"><a href="{% url 'products' %}" class="button-link">Объявления</a></div>
         </div>
-        {% endfor %}
     </div>
+
+    <h1>Объявления</h1>
+    {% for product in products %}
+    <div class="advertisement">
+        <img src="{{ product.image.url }}" alt="{{ product.name }}">
+        <div>
+            <h2>{{ product.name }}</h2>
+            <p>Цена: ${{ product.price }}</p>
+            <p>Описание: {{ product.description }}</p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
 </body>
 </html>

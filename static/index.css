@@ -279,3 +279,28 @@
   color: var(--color-black);
   font-family: var(--font-macondo);
 }
+a {
+    text-decoration: none; /* Убираем подчеркивание */
+    color: inherit; /* Ссылки будут иметь цвет текста как у родительского элемента */
+}
+
+a:hover {
+    text-decoration: none; /* Убираем подчеркивание при наведении */
+    color: inherit; /* Ссылки будут иметь цвет текста как у родительского элемента при наведении */
+}
+/* Стили для ссылок, выглядящих как кнопки */
+.button-link {
+    display: inline-block;
+    padding: 10px 20px; /* Подобрать подходящий размер */
+    background-color: #ffffff; /* Цвет фона */
+    color: #1e1f22; /* Цвет текста */
+    text-decoration: none;
+    border: 2px solid #ffffff; /* Обводка */
+    border-radius: 5px; /* Закругление углов */
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Плавные переходы */
+}
+
+.button-link:hover {
+    background-color: #0056b3; /* Изменение цвета фона при наведении */
+    border-color: #0056b3; /* Изменение цвета обводки при наведении */
+}
