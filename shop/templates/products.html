@@ -1,31 +1,48 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
+py <html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Веб-платформа объявлений</title>
-    <link rel="stylesheet" href="/static/Products_styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Macondo&display=swap" rel="stylesheet" />
+    <link href={% static 'products.css' %} rel="stylesheet" />
+    <title>{% for product in tower %}</title>
 </head>
 <body>
-    <header>
-        <h1>Веб-платформа объявлений</h1>
-    </header>
-    <div class="container">
-        <form action="submit_ad.php" method="POST">
-            <div class="form-group">
-                <label for="title">Заголовок объявления:</label>
-                <input type="text" id="title" name="title" required>
+    <div class="v93_37">
+        <div class="v93_38">
+            <div class="v93_39">
+                <div class="v93_40">
+                    <div class="v93_41"></div>
+                </div>
+                <div class="v93_42">
+                    <div class="v93_43"></div>
+                    <div class="v93_44">
+                        <div class="v93_45"><a href="{% url 'index' %}" class="button-link">Главная</a></div>
+                        <div class="v93_46"><a href="{% url 'contacts' %}" class="button-link">Контакты</a></div>
+                        <div class="v93_47"><a href="{% url 'profile' %}" class="button-link">Профиль</a></div>
+                        <div class="v93_48"><a href="{% url 'products' %}" class="button-link">Объявления</a></div>
+                    </div>
+                </div>
+                <span class="v93_49">Altero </span>
+                <div class="v93_50">
+                    <div class="v93_51"></div>
+                    <div class="v93_52"></div>
+                    <div class="v93_53"></div>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="description">Описание товара:</label>
-                <textarea id="description" name="description" required></textarea>
-            </div>
-            <div class="form-group">
-                <label for="contact">Контактная информация:</label>
-                <input type="text" id="contact" name="contact" required>
-            </div>
-            <input type="submit" value="Опубликовать объявление">
-        </form>
+        </div>
+        <span class="v93_73">Цена {{ product.price }}</span>
+        <div class="v93_54">
+            <div class="v93_74"></div>
+            <span class="v93_113">Написать сообщение</span>
+            <div class="v93_111"></div>
+            <span class="v93_115">Позвонить через Altero</span>
+            <div class="v93_112"></div>
+        </div>
+        <div class="v93_120">
+            <span class="v93_117">Адрес</span>
+            <span class="v93_118">Описание</span>
+        </div>
+        {% endfor %}
     </div>
 </body>
 </html>

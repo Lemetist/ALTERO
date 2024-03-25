@@ -13,7 +13,10 @@ def products(request):
     return render(request, 'advertisement.html',context)
 
 def products_create(request):
-    return  render(request, 'products.html')
+    context ={
+        'tower': Product.objects.all()
+    }
+    return  render(request, 'products.html', context)
 
 def profile(request):
     return render(request, 'profile.html')
