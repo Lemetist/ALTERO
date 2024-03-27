@@ -12,23 +12,23 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
+# Строим пути внутри проекта, используя BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
+# Быстрая настройка для разработки - не подходит для продакшена
+# См. https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
+# SECURITY WARNING: храните ключ секретный ключ в безопасности!
 SECRET_KEY = 'django-insecure-p@pl3p3ly2050hsq)_8otr)##+0f24r-0!)99a*0=%()=ag!6+'
 
-# SECURITY WARNING: don't run with debug turned on in production!
+# SECURITY WARNING: не включайте отладку в продакшен!
 DEBUG = True
 
 ALLOWED_HOSTS = []
 
 
-# Application definition
+# Определение приложений
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -74,7 +74,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'myshop.wsgi.application'
 
 
-# Database
+# База данных
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
@@ -85,7 +85,7 @@ DATABASES = {
 }
 
 
-# Password validation
+# Проверка пароля
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -104,7 +104,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-# Internationalization
+# Мультиязычность
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
@@ -116,7 +116,7 @@ USE_I18N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
+# Статические файлы (CSS, JavaScript, изображения)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = '/static/'
@@ -125,11 +125,11 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 
-# Default primary key field type
+# Тип поля первичного ключа по умолчанию
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-#Users
-AUTH_USER_MODEL = 'users.User '
+# Пользователи
+AUTH_USER_MODEL = 'users.User'
