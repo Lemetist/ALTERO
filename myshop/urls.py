@@ -25,6 +25,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='index'),
     path('adv/', include('shop.urls', namespace='products') ),
+    path('login/', include('users.urls', namespace='login')),
     path('profile/', profile, name='profile'),
     path('home/',home, name='home'),
     path('contacts/',contacts, name='contacts')
