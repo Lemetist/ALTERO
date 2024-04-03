@@ -1,6 +1,13 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 
+from users.models import User
+from users.forms import UserLoginForm
+
+def register(request):
+    return render(request, 'register.html')
+
+
 def login_view(request):
     if request.method == 'POST':
         username = request.POST['username']
