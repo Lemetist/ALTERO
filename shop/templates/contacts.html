@@ -22,7 +22,14 @@
                             <p class="p"><a href="{% url 'home' %}" class="button-link">Главная</a></p>
                         </div>
                         <div class="div3"><a href="{% url 'contacts' %}" class="button-link">Контакты</a></div>
-                        <div class="div4"><a href="{% url 'profile' %}" class="button-link">Профиль</a></div>
+                        <div class="div4">
+    {% if user.is_authenticated %}
+        <a href="{% url 'users:profile' pk=request.user.pk %}" class="button-link">Профиль</a>
+    {% else %}
+        <a href="{% url 'users:login' %}?next={{ request.path }}" class="button-link">Войти</a>
+    {% endif %}
+</div>
+
                         <div class="div5"><a href="{% url 'products:index' %}" class="button-link">Объявления</a></div>
                     </div>
                 </div>
