@@ -1,24 +1,15 @@
 from django.shortcuts import render
-
-from shop.models import Product
-
+from users.models import Advertisement
 
 def index(request):
-    return render(request, 'index.html', )
+    return render(request, 'index.html')
 
 def products(request):
-    context = {
-        'products': Product.objects.all(),
-    }
-    return render(request, 'advertisement.html',context)
-
-def profile(request):
-    return render(request, 'profile.html')
-
+    advertisements = Advertisement.objects.all()
+    return render(request, 'advertisement.html', {'advertisements': advertisements})
 
 def contacts(request):
     return render(request, 'contacts.html')
-
 
 def home(request):
     return index(request)

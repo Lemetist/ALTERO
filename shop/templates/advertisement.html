@@ -16,22 +16,32 @@
                 <p class="p"><a href="{% url 'home' %}" class="button-link">Главная</a></p>
             </div>
             <div class="div3"><a href="{% url 'contacts' %}" class="button-link">Контакты</a></div>
-            <div class="div4"><a href="{% url 'profile' %}" class="button-link">Профиль</a></div>
+            <div class="div4">
+    {% if user.is_authenticated %}
+        <a href="{% url 'users:profile' pk=request.user.pk %}" class="button-link">Профиль</a>
+    {% else %}
+        <a href="{% url 'users:login' %}?next={{ request.path }}" class="button-link">Войти</a>
+    {% endif %}
+</div>
+
             <div class="div5"><a href="{% url 'products:index' %}" class="button-link">Объявления</a></div>
         </div>
     </div>
 
     <h1>Объявления</h1>
-    {% for product in products %}
-    <div class="advertisement">
-        <img src="{{ product.image.url }}" alt="{{ product.name }}">
-        <div>
-            <h2>{{ product.name }}</h2>
-            <p>Цена: ${{ product.price }}</p>
-            <p>Описание: {{ product.description }}</p>
-        </div>
+
+{% for advertisement in advertisements %}
+<div class="advertisement">
+    <img src="{{ advertisement.image.url }}" alt="{{ advertisement.title }}">
+    <div>
+        <h2>{{ advertisement.title }}</h2>
+        <p>Цена: ${{ advertisement.price }}</p>
+        <p>Описание: {{ advertisement.description }}</p>
+        <p>Контактная информация: {{ advertisement.contact_info }}</p>
     </div>
-    {% endfor %}
+</div>
+{% endfor %}
+
 </div>
 </body>
 </html>
