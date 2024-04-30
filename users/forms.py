@@ -47,10 +47,11 @@ from .models import Advertisement
 class AdvertisementForm(forms.ModelForm):
     title = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control py-4'}))
     slug = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control py-4'}))
-    image = forms.ImageField(widget=forms.FileInput(attrs={'class': 'form-control-file'}))
-    description= forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control py-4'}))
+    image = forms.ImageField(widget=forms.FileInput(attrs={'class': 'form-control-file'}), required=False)  # Сделать поле необязательным
+    description = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control py-4'}))
     price = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control py-4'}))
     contact_info = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control py-4'}))
+
     class Meta:
         model = Advertisement
         fields = ['title', 'slug', 'image', 'description', 'price', 'contact_info']
@@ -67,5 +68,4 @@ class AdvertisementForm(forms.ModelForm):
         if price is None or int(price) <= 0:
             raise forms.ValidationError("Цена должна быть положительным числом.")
         return price
-
 

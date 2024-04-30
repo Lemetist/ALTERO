@@ -29,24 +29,27 @@ class UserProfileView(TitleMixin, UpdateView):
     def get_success_url(self):
         return reverse_lazy('users:profile', kwargs={'pk': self.request.user.pk})
 
-from django.shortcuts import render, redirect
-from django.views import View
+from django.views.generic import CreateView
+from django.shortcuts import redirect
+from django.urls import reverse_lazy
 from .forms import AdvertisementForm
+from .models import Advertisement
 
-class CreateAdvertisementView(TitleMixin,UpdateView):
+class CreateAdvertisementView(CreateView):
     model = Advertisement
     form_class = AdvertisementForm
-    template_name = 'users/profile.html'
-    title = 'Личный кабинет'
-    def get(self, request):
-        form = AdvertisementForm()
-        return render(request, 'users/create_advertisement.html', {'form': form})
+    template_name = 'users/create_advertisement.html'
 
-    def post(self, request):
-        form = AdvertisementForm(request.POST)
-        if form.is_valid():
-            advertisement = form.save(commit=False)
-            advertisement.user = request.user
-            advertisement.save()
-            return redirect(reverse_lazy('users:profile', kwargs={'pk': request.user.pk}))
-        return render(request, 'users/create_advertisement.html', {'form': form})
+    def form_valid(self, form):
+        print("Форма действительна. Обработка POST-запроса...")
+        advertisement = form.save(commit=False)
+        advertisement.user = self.request.user
+        advertisement.save()
+        print("Объявление успешно сохранено в базу данных.")
+        return redirect(reverse_lazy('users:profile', kwargs={'pk': self.request.user.pk}))
+
+    def form_invalid(self, form):
+        print("Форма недействительна. Ошибки формы:", form.errors)
+        return super().form_invalid(form)
+
+
